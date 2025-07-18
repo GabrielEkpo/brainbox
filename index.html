@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="BrainBox is a one-stop mobile app for students, providing past questions, learning resources, a platform for note taking and to-dos, emergency school contacts, and a service to hire tutors."
+    />
+    <meta name="author" content="YungBoi" />
+    <meta property="yb:title" content="BrainBox: The BrainBox App" />
+    <meta
+      property="yb:description"
+      content="Get past questions, notes, a tutor, and more! The all-in-one app for students."
+    />
+    <meta property="twitter:title" content="BrainBox: The BrainBox App" />
+    <meta
+      property="twitter:description"
+      content="Get past questions, notes, a tutor, and more! The all-in-one app for students."
+    />
+    <meta property="yb:image" content="static/logo.png" />
+
+    <title>
+      BrainBox: Student App for Past Questions, Notes & Tutors, And Chat AI
+    </title>
+    <meta
+      name="google-site-verification"
+      content="qNyO0S0CnJUZgwmzy1BtxyYThwKsQtPPW0dycINkZ5Y"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      id="favicon"
+      rel="icon"
+      type="image/x-icon"
+      href="static/favicon.ico"
+    />
+
+    <style>
+      .navbar-brand {
+        color: white;
+        padding-left: 3%;
+        font-weight: bold;
+      }
+      .nav-link {
+        color: white;
+      }
+      @keyframes image {
+        0% {
+          transform: rotate(-45deg);
+        }
+
+        50% {
+          transform: rotate(45deg);
+        }
+
+        100% {
+          transform: rotate(-45deg);
+        }
+      }
+
+      .contact-input::placeholder {
+        color: black;
+      }
+      i {
+        color: #33e414;
+        /* background-color: #4e7394; */
+      }
+      /* Navigation Section */
+      body {
+        margin: 0px;
+      }
+      .main {
+        padding: 0px;
+      }
+      .nav-parent {
+        background-color: #33e414;
+        padding: 1% 5%;
+        box-shadow: 0px 0px 2px rgb(246, 241, 241);
+      }
+      /* banner section */
+      .banner {
+        background-color: #a5c5a0;
+        background-image: url("https://plus.unsplash.com/premium_photo-1664300897489-fd98eee64faf?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        background-position: center top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-blend-mode: multiply;
+      }
+      .banner-text {
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+        padding-left: 7%;
+        padding-top: 5%;
+        flex-direction: column;
+      }
+      .banner-text h1 {
+        font-size: 3rem;
+        color: white;
+        font-family: "Poetsen One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .banner-img {
+        text-align: center;
+        padding: 5%;
+      }
+      .banner-img img {
+        transform: rotate(-45deg);
+        animation-name: image;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+      }
+      /* vision and mission section */
+      .values img {
+        width: 100px;
+      }
+      .values {
+        text-align: center;
+        background-color: white;
+        padding: 5%;
+      }
+      .statement {
+        box-shadow: 0px 0px 2px grey;
+        margin: 2%;
+        padding: 2%;
+        border-radius: 5px;
+        background-color: #e7e7ee;
+      }
+      .statement p {
+        text-align: left;
+      }
+      #about {
+        padding: 7%;
+        background-image: url("https://plus.unsplash.com/premium_photo-1664300897489-fd98eee64faf?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        /* background-size: cover; */
+        background-repeat: no-repeat;
+        background-color: #9db19a;
+        background-position: center top;
+        background-blend-mode: color-burn;
+        color: white;
+      }
+
+      /* media query code goes here */
+      /* ------------------------- */
+      /* Media Query for Mobile Devices */
+      @media (max-width: 480px) {
+        .banner-text h1 {
+          font-size: 2rem;
+        }
+        .diff {
+          display: flex;
+          flex-direction: column-reverse;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid main">
+      <!-- nav bar section -->
+      <section>
+        <nav class="navbar navbar-expand-lg nav-parent">
+          <img
+            src="LOGO.png"
+            alt="Login icon"
+            class="login-icon"
+            width="100px"
+          /><a class="navbar-brand" href="/">BrainBox</a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="" role="button"
+              ><i
+                class="fa fa-bars"
+                aria-hidden="true"
+                style="color: #e6e6ff"
+              ></i
+            ></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">News</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="privacy.html">Privacy Policy</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <a class="btn" style="background-color: white" href="#price">
+                Pricing
+              </a>
+            </form>
+          </div>
+        </nav>
+      </section>
+      <!-- main body -->
+      <section class="container-fluid">
+        <div class="row banner">
+          <div class="col-md-6 banner-text">
+            <h1>Increase your productivity and Exams performance</h1>
+            <p style="color: white; font-family: helvetica">
+              Looking our for where you can practice and boost your grade as a
+              computer science student? Look no further.
+            </p>
+            <div>
+              <a
+                href="https://play.google.com/store/apps/details?id=codewithdama.brainybit"
+                class="btn"
+                style="background-color: white"
+                ><i class="fa-brands fa-google-play"></i> Download App</a
+              >
+              <a
+                href=""
+                class="btn"
+                style="border: 1px solid white; color: white"
+                ><i class="fa-regular fa-circle-chevron-down"></i> Learn More</a
+              >
+            </div>
+          </div>
+          <div class="col-md-6 banner-img">
+            <img src="phone.png" alt="images" width="200px" />
+          </div>
+        </div>
+        <!-- Vision and mission part -->
+        <div class="values">
+          <div class="row" style="justify-content: center">
+            <div class="col-md-3 statement">
+              <img
+                src="https://brainybit.vercel.app/static/visionary.png"
+                alt=""
+              />
+              <h3>Vision</h3>
+              <p>
+                Our vision is to empower every student with accessible and
+                comprehensive educational resources, fostering a dynamic
+                learning environment that transcends traditional boundaries.
+              </p>
+            </div>
+            <div class="col-md-3 statement">
+              <img
+                src="https://brainybit.vercel.app/static/customers.png"
+                alt=""
+              />
+              <h3>Mission</h3>
+              <p>
+                Our mission is to provide a centralized platform for students,
+                offering past questions, learning materials, and essential
+                school information, thereby enhancing academic excellence,
+                promoting student success, and cultivating a vibrant community
+                of lifelong learners
+              </p>
+            </div>
+            <div class="col-md-3 statement">
+              <img
+                src="https://brainybit.vercel.app/static/leadership.png"
+                alt=""
+              />
+              <h3>Values</h3>
+              <p>
+                Committed to educational equity, we empower students through a
+                centralized platform offering resources and fostering a lifelong
+                learning community.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- about us -->
+        <div class="row" id="about">
+          <div class="col-md-8">
+            <h2>About Us</h2>
+            <p>
+              BrainBox is a <b>On-Stop-For-All</b> app tailored towards Students
+              of Nigeria to provide them with past questions, learning
+              resources, interface for note taking and todos among others. We
+              also make provision for emmergency contacts withing the school
+              environment and as well hiring of tutors and turial services.
+            </p>
+          </div>
+        </div>
+        <!-- What we are doing -->
+        <div style="padding: 3%">
+          <h2 style="text-align: center">What We Are Doing Differently</h2>
+          <div class="row">
+            <div class="col-md-6" style="padding: 7%">
+              <h3>Authentic Learning Resource</h3>
+              <p>
+                We provide ondemand video trailer rightly to student need using
+                same course material provided for students. Well detailed and
+                explained all for free.
+              </p>
+            </div>
+            <div class="col-md-6" style="text-align: left; padding: 5%">
+              <img src="learning.svg" alt="" width="300px" />
+            </div>
+          </div>
+          <!-- second row -->
+          <div class="row diff">
+            <div
+              class="col-md-6 order-md-1"
+              style="text-align: center; padding: 5%"
+            >
+              <img src="tutor.svg" alt="" width="300px" />
+            </div>
+            <div class="col-md-6 order-md-2" style="padding: 7%">
+              <h3>Qualified Tutors</h3>
+              <p>
+                Looking out for a qualified tutor for any course, we provide you
+                with collections to pick from. We also have rating system so
+                that you can hire nothing but the best.
+              </p>
+            </div>
+          </div>
+          <!-- third row -->
+          <div class="row">
+            <div class="col-md-6" style="padding: 7%">
+              <h3>School Navigation System</h3>
+              <p>
+                Trying to locate any faculty or prominent building in the
+                school? We provide you with interactive map view to help you
+                navigate through the campus with ease
+              </p>
+            </div>
+            <div class="col-md-6" style="text-align: left; padding: 5%">
+              <img src="map.jpg" alt="" width="300px" />
+            </div>
+          </div>
+        </div>
+        <!-- pricing section goges here -->
+        <div id="price">
+          <div
+            class="row"
+            style="
+              background-color: #30b319;
+              padding: 5%;
+              text-align: center;
+              color: white;
+            "
+          >
+            <h6>Little Price, Great Value</h6>
+            <hr
+              style="
+                width: 20%;
+                margin: auto;
+                border: none;
+                color: #30b319;
+                border-top: 8px dotted white;
+              "
+            />
+            <h4>We got you covered with our flexible Subscription Plan</h4>
+            <div class="col-md-2"></div>
+            <div
+              class="col-md-4"
+              style="
+                background-color: white;
+                margin: 1%;
+                color: black;
+                padding: 2%;
+              "
+            >
+              <p>Free Plan</p>
+              <h3>₦00.00</h3>
+              <p>Per Semester</p>
+              <div style="text-align: left; padding: 2%">
+                <p>Limited Acess</p>
+                <hr />
+                <p>Limited questions</p>
+                <hr />
+                <p>No Map Services</p>
+                <hr />
+                <p>Ads Available</p>
+              </div>
+            </div>
+            <div
+              class="col-md-4"
+              style="
+                background-color: white;
+                margin: 1%;
+                color: black;
+                padding: 2%;
+              "
+            >
+              <p>Paid Plan</p>
+              <h3>₦ 1000</h3>
+              <p>Per Semester</p>
+              <div style="text-align: left; padding: 2%">
+                <p>Free Access</p>
+                <hr />
+                <p>Unlimited questions</p>
+                <hr />
+                <p>Available Map Services</p>
+                <hr />
+                <p>No Ads</p>
+              </div>
+            </div>
+            <div class="col-md-2"></div>
+          </div>
+        </div>
+        <!-- contact us goes here -->
+        <div>
+          <h2
+            style="padding: 4%; text-align: center"
+            class="contact"
+            id="contact"
+          >
+            Contact Form
+          </h2>
+          <div
+            class="row diff"
+            style="background-color: rgb(255, 255, 255); padding: 3%"
+          >
+            <div class="col-md-3">
+              <h4><i class="fa-solid fa-location-dot"></i> Address</h4>
+              <p>
+                Dama Software Solution, Oppo. M & M Place, High Court Keffi.
+              </p>
+
+              <h4><i class="fa-solid fa-phone"></i> Phone</h4>
+              <p>+2348107156251 <br />+2348086434128</p>
+              <p></p>
+
+              <h4><i class="fa-solid fa-envelope"></i> Email</h4>
+              <p>ekpogabriel411@gmail.com <br />gabrielekpo247@gmail.com</p>
+            </div>
+            <div class="col-md-9" style="text-align: left">
+              <h4>Send Us A Message</h4>
+              <p>
+                If you have concern or query regarding our work, or you have an
+                offer for us, feel free to reach us directly. We will be glad to
+                help you.
+              </p>
+              <form action="/general/contact" method="POST">
+                <p>
+                  <input
+                    class="contact-input"
+                    type="text"
+                    name="name"
+                    id="name"
+                    required
+                    placeholder="Enter Your Name"
+                    style="
+                      background-color: #dde6ee;
+                      width: 100%;
+                      padding: 2%;
+                      border: none;
+                      color: gray;
+                    "
+                  />
+                </p>
+                <p>
+                  <input
+                    class="contact-input"
+                    type="email"
+                    name="email"
+                    placeholder="Enter Your Email"
+                    required
+                    style="
+                      background-color: #dde6ee;
+                      width: 100%;
+                      padding: 2%;
+                      border: none;
+                      color: gray;
+                    "
+                  />
+                </p>
+                <p>
+                  <textarea
+                    class="contact-input"
+                    name="message"
+                    id=""
+                    placeholder="Enter Your Message"
+                    required
+                    style="
+                      background-color: #dde6ee;
+                      width: 100%;
+                      padding: 2%;
+                      border: none;
+                      color: gray;
+                    "
+                  ></textarea>
+                </p>
+                <p>
+                  <button
+                    class="btn"
+                    style="background-color: #888b87; color: white"
+                  >
+                    Send Message
+                  </button>
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- footer section -->
+      <section>
+        <div
+          style="
+            text-align: center;
+            background-color: gray;
+            padding: 1%;
+            color: white;
+            font-weight: bold;
+          "
+        >
+          Copyright 2025 BrainBox
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
